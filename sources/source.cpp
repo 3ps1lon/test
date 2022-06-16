@@ -20,15 +20,15 @@ String::String(const String &rhs) {
     Data[i] = rhs.Data[i];
   }
 
- /* length = rhs.length;
-  Data = new char[length + 1];
-  strcpy(Data, rhs.Data); */
+  /* length = rhs.length;
+   Data = new char[length + 1];
+   strcpy(Data, rhs.Data); */
 }
 
 String::String(const char* data)
 {
   length = 0;
-  length = strlen(data);
+  length = strlen(data)+1;
   char* datata = new char[length];
   for (unsigned int i = 0; i < length; ++i)
     datata[i] = data[i];
