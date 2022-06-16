@@ -31,7 +31,7 @@ String::String(const char* data)
   char* datata = new char[length];
   for (unsigned int i = 0; i < length; ++i)
     datata[i] = data[i];
-  Data = datata;
+  this->Data = datata;
   length = strlen(data);
 }
 
