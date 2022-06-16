@@ -28,9 +28,9 @@ String::String(const String &rhs) {
 String::String(const char* data)
 {
   length = 0;
-  length = strlen(data)+1;
+  length = strlen(data);
   char* datata = new char[length];
-  for (unsigned int i = 0; i < length; ++i)
+  for (unsigned int i = 0; i < length; i++)
     datata[i] = data[i];
   this->Data = datata;
   length = strlen(data);
