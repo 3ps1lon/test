@@ -25,11 +25,14 @@ String::String(const String &rhs) {
   strcpy(Data, rhs.Data); */
 }
 
-String::String(const char* data) {
+String::String(const char* data)
+{
   length = strlen(data);
-  Data = new char[length + 20];
-  for (size_t i = 0; i < length; i++)
-    Data[i] = data[i];
+  char* datata = new char[length];
+  for (unsigned int i = 0; i < length; ++i)
+    datata[i] = data[i];
+  Data = datata;
+  length = strlen(data);
 }
 
 String& String::operator=(const String& rhs) {
