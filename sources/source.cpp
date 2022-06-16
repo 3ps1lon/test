@@ -27,7 +27,7 @@ String::String(const String &rhs) {
 
 
 String::String(const char *data) {
-  length= 0;
+  length = 0;
   const char *str = data;
   unsigned int i = 0;
   while (str[i] != '\000') {
