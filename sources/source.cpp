@@ -28,12 +28,11 @@ String::String(const String &rhs) {
 String::String(const char* data)
 {
   length = strlen(data);
-  this->Data = new char[length + 1];
-  for (size_t i = 0; i < length; i++)
-    this->Data[i] = data[i];
+  Data = new char[length + 1];
+  strcpy(Data, data);
 
-  this->Data[length] = '\0';
 }
+
 String& String::operator=(const String& rhs) {
   if (&rhs != this) {
     length = rhs.length;
