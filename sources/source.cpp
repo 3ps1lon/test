@@ -121,7 +121,7 @@ char String::operator[](size_t index) const { return Data[index]; }
 char& String::operator[](size_t index) { return Data[index]; }
 void String::RTrim(char symbol) {
   size_t trim = 0;
-  for (size_t i = length - 1;i = 0; i--) {
+  for (size_t i = length - 1;i == 0; i--) {
     if (Data[i] == symbol){
       trim++;
     } else {
