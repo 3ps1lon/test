@@ -121,7 +121,7 @@ char String::operator[](size_t index) const { return Data[index]; }
 char& String::operator[](size_t index) { return Data[index]; }
 void String::RTrim(char symbol) {
   size_t trim = 0;
-  for (size_t i = length - 1;i == 0; i--) {
+  for (size_t i = length - 1; i == 0; i--) {
     if (Data[i] == symbol){
       trim++;
     } else {
@@ -160,10 +160,9 @@ void String::swap(String& oth) {
   String datata(*this);
   *this = oth;
   oth = datata;
-
 }
 std::ostream& operator<<(std::ostream& out, const String& str) {
-  for (size_t i =0;i < str.length; i++){
+  for (size_t i =0; i < str.length; i++){
     out << str[i];
   }
   return out;
