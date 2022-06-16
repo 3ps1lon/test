@@ -28,9 +28,12 @@ String::String(const String &rhs) {
 String::String(const char* data)
 {
   length = strlen(data);
-  this->Data = new char[length + 1];
+  char* datata = new char[length + 1];
   for (size_t i = 0; i < length; i++)
-    this->Data[i] = data[i];
+    datata[i] = data[i];
+  Data = datata;
+  length = strlen(data);
+
 }
 
 String& String::operator=(const String& rhs) {
