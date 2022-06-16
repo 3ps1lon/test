@@ -65,8 +65,7 @@ String& String::operator*=(unsigned int m) {
 bool String::operator==(const String& rhs) const {
   if (rhs.length != length){
     return false;
-  }
-  else {
+  } else {
     for (size_t i = 0; i < length; i++){
       if (Data[i] != rhs.Data[i]){
         return false;
@@ -122,7 +121,7 @@ char String::operator[](size_t index) const { return Data[index]; }
 char& String::operator[](size_t index) { return Data[index]; }
 void String::RTrim(char symbol) {
   size_t trim = 0;
-  for (size_t i = length - 1; i >= 0;i-- ){
+  for (size_t i = length - 1;i >= 0;i--) {
     if (Data[i] == symbol){
       trim++;
     } else {
@@ -141,7 +140,7 @@ void String::RTrim(char symbol) {
 
 void String::LTrim(char symbol) {
   size_t trim = 0;
-  for (size_t i = 0; i < length;i++ ){
+  for (size_t i = 0; i < length;i++) {
     if (Data[i] == symbol){
       trim++;
     } else {
