@@ -25,20 +25,14 @@ String::String(const String &rhs) {
   strcpy(Data, rhs.Data); */
 }
 
+String::String(const char* data)
+{
+  length = strlen(data);
+  this->Data = new char[length + 1];
+  for (size_t i = 0; i < length; i++)
+    this->Data[i] = data[i];
 
-String::String(const char *data) {
-  length = 0;
-  const char *str = data;
-  unsigned int i = 0;
-  while (str[i] != '\000') {
-    ++length;
-    ++i;
-  }
-  this->Data = new char[length];
-  for (i = 0; i < length; i++)
-    Data[i] = str[i];
 }
-
 
 String& String::operator=(const String& rhs) {
   if (&rhs != this) {
