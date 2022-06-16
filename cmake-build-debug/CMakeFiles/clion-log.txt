@@ -1,0 +1,9 @@
+/home/ep_s1lon/Downloads/clion-2021.3.4/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/home/ep_s1lon/Downloads/clion-2021.3.4/bin/ninja/linux/ninja -G Ninja /home/ep_s1lon/Desktop/lab_ay/lab-01-my-string-3ps1lon
+-- [hunter] Calculating Toolchain-SHA1
+-- [hunter] Calculating Config-SHA1
+-- [hunter] HUNTER_ROOT: /home/ep_s1lon/.hunter
+-- [hunter] [ Hunter-ID: 95c47c9 | Toolchain-ID: e5bec79 | Config-ID: c8a7791 ]
+-- [hunter] GTEST_ROOT: /home/ep_s1lon/.hunter/_Base/95c47c9/e5bec79/c8a7791/Install (ver.: 1.11.0)
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/ep_s1lon/Desktop/lab_ay/lab-01-my-string-3ps1lon/cmake-build-debug
