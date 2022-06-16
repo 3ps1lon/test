@@ -31,7 +31,6 @@ String::String(const char* data)
   this->Data = new char[length + 1];
   for (size_t i = 0; i < length; i++)
     this->Data[i] = data[i];
-
 }
 
 String& String::operator=(const String& rhs) {
