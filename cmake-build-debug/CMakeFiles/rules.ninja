@@ -80,7 +80,7 @@ rule CXX_EXECUTABLE_LINKER__demo_Debug
 # Rule for re-running cmake.
 
 rule RERUN_CMAKE
-  command = /home/ep_s1lon/Downloads/clion-2021.3.4/bin/cmake/linux/bin/cmake --regenerate-during-build -S/home/ep_s1lon/Desktop/lab_ay/lab-01-my-string-3ps1lon -B/home/ep_s1lon/Desktop/lab_ay/lab-01-my-string-3ps1lon/cmake-build-debug
+  command = /home/ep_s1lon/Downloads/clion-2021.3.4/bin/cmake/linux/bin/cmake --regenerate-during-build -S/home/ep_s1lon/Desktop/lab_ay/lab-02-substring-3ps1lon -B/home/ep_s1lon/Desktop/lab_ay/lab-02-substring-3ps1lon/cmake-build-debug
   description = Re-running CMake...
   generator = 1
 

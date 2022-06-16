@@ -34,13 +34,13 @@ include CMakeFiles/rules.ninja
 #############################################
 # Logical path to working directory; prefix for absolute paths.
 
-cmake_ninja_workdir = /home/ep_s1lon/Desktop/lab_ay/lab-01-my-string-3ps1lon/cmake-build-debug/_3rdParty/Hunter/toolchain/_builds/
+cmake_ninja_workdir = /home/ep_s1lon/Desktop/lab_ay/lab-02-substring-3ps1lon/cmake-build-debug/_3rdParty/Hunter/toolchain/_builds/
 
 #############################################
 # Utility command for rebuild_cache
 
 build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/ep_s1lon/Desktop/lab_ay/lab-01-my-string-3ps1lon/cmake-build-debug/_3rdParty/Hunter/toolchain/_builds && /home/ep_s1lon/Downloads/clion-2021.3.4/bin/cmake/linux/bin/cmake --regenerate-during-build -S/home/ep_s1lon/Desktop/lab_ay/lab-01-my-string-3ps1lon/cmake-build-debug/_3rdParty/Hunter/toolchain -B/home/ep_s1lon/Desktop/lab_ay/lab-01-my-string-3ps1lon/cmake-build-debug/_3rdParty/Hunter/toolchain/_builds
+  COMMAND = cd /home/ep_s1lon/Desktop/lab_ay/lab-02-substring-3ps1lon/cmake-build-debug/_3rdParty/Hunter/toolchain/_builds && /home/ep_s1lon/Downloads/clion-2021.3.4/bin/cmake/linux/bin/cmake --regenerate-during-build -S/home/ep_s1lon/Desktop/lab_ay/lab-02-substring-3ps1lon/cmake-build-debug/_3rdParty/Hunter/toolchain -B/home/ep_s1lon/Desktop/lab_ay/lab-02-substring-3ps1lon/cmake-build-debug/_3rdParty/Hunter/toolchain/_builds
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -52,7 +52,7 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 # Utility command for edit_cache
 
 build CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/ep_s1lon/Desktop/lab_ay/lab-01-my-string-3ps1lon/cmake-build-debug/_3rdParty/Hunter/toolchain/_builds && /home/ep_s1lon/Downloads/clion-2021.3.4/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  COMMAND = cd /home/ep_s1lon/Desktop/lab_ay/lab-02-substring-3ps1lon/cmake-build-debug/_3rdParty/Hunter/toolchain/_builds && /home/ep_s1lon/Downloads/clion-2021.3.4/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
   DESC = No interactive CMake dialog available...
   restat = 1
 
@@ -67,7 +67,7 @@ build edit_cache: phony CMakeFiles/edit_cache.util
 # =============================================================================
 
 #############################################
-# Folder: /home/ep_s1lon/Desktop/lab_ay/lab-01-my-string-3ps1lon/cmake-build-debug/_3rdParty/Hunter/toolchain/_builds
+# Folder: /home/ep_s1lon/Desktop/lab_ay/lab-02-substring-3ps1lon/cmake-build-debug/_3rdParty/Hunter/toolchain/_builds
 
 build all: phony
 

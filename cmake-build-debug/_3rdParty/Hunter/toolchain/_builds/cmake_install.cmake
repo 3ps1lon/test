@@ -1,4 +1,4 @@
-# Install script for directory: /home/ep_s1lon/Desktop/lab_ay/lab-01-my-string-3ps1lon/cmake-build-debug/_3rdParty/Hunter/toolchain
+# Install script for directory: /home/ep_s1lon/Desktop/lab_ay/lab-02-substring-3ps1lon/cmake-build-debug/_3rdParty/Hunter/toolchain
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -50,5 +50,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/ep_s1lon/Desktop/lab_ay/lab-01-my-string-3ps1lon/cmake-build-debug/_3rdParty/Hunter/toolchain/_builds/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/ep_s1lon/Desktop/lab_ay/lab-02-substring-3ps1lon/cmake-build-debug/_3rdParty/Hunter/toolchain/_builds/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

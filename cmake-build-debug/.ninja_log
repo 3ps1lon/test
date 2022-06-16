@@ -1,9 +1,11 @@
 # ninja log v5
-365	369	1655351979353009678	libtemplated.a	fbbb2fd6ab83bd1b
-369	474	1655351979457009826	tests	2091e18c688c1f27
-0	511	1655352156853311542	build.ninja	2205010ee0c452fc
-0	365	1655351979349009672	CMakeFiles/template.dir/sources/source.cpp.o	16dcd4b05fcbbe4c
-0	839	1655262206586853773	CMakeFiles/tests.dir/tests/test.cpp.o	55ed4081a5da6e60
-0	246	1655262319371034613	CMakeFiles/template.dir/include/string.cpp.o	2dd5c9a96ed707a4
-1	1017	1655351835732802508	CMakeFiles/tests.dir/tests/string_unittest.cpp.o	b4c184d00644cba2
-0	233	1655262319359034595	CMakeFiles/template.dir/include/main.cpp.o	b2b6f335dd5f70d
+346	350	1655391415234806960	libtemplated.a	fbbb2fd6ab83bd1b
+350	451	1655391415334837806	tests	4df965ede03f9026
+1	518	1655391424257506930	build.ninja	6ed8ba76206af55d
+0	346	1655391415230805727	CMakeFiles/template.dir/sources/source.cpp.o	6aa2f9c544f50d16
+1	932	1655391371526936241	CMakeFiles/tests.dir/tests/test.cpp.o	82667e9a1fae1a45
+0	508	1655391424257506930	build.ninja	6ed8ba76206af55d
+1	381	1655391424649620350	CMakeFiles/template.dir/sources/source.cpp.o	bae687fb8adb0652
+381	385	1655391424653621507	libtemplated.a	fbbb2fd6ab83bd1b
+1	953	1655391425221785407	CMakeFiles/tests.dir/tests/test.cpp.o	ed453f220eadc3e6
+953	1054	1655391425321814136	tests	c7e777e760e27099

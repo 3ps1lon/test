@@ -1,204 +1,82 @@
 // Copyright 2020 Your Name <your_email>
 
-#include <string.hpp>
-#include <string.h>
-#include <algorithm>
+#include <substring.hpp>
+#include <cmath>
 
-
-String::String(){
-  Data = nullptr;
-  length = 0;
-}
-String::~String() {
-  delete[] Data;
-}
-
-String::String(const String &rhs) {
-  length = rhs.length;
-  Data = new char[length];
-  for (size_t i = 0; i < length; i++) {
-    Data[i] = rhs.Data[i];
+size_t str_find(const std::string& str, const std::string& substr){
+  size_t t =  str.size();
+  size_t last  = substr.size();
+  if (t < last) {
+    return -1;
   }
-
-  /* length = rhs.length;
-   Data = new char[length + 1];
-   strcpy(Data, rhs.Data); */
-}
-
-String::String(const char* data)
-{
-  length = 0;
-  length = strlen(data);
-  char* datata = new char[length];
-  for (unsigned int i = 0; i < length; i++)
-    datata[i] = data[i];
-  this->Data = datata;
-  length = strlen(data);
-}
-
-String& String::operator=(const String& rhs) {
-  if (&rhs != this) {
-    length = rhs.length;
-    Data = new char[length];
-    for (size_t i = 0; i < length; i++)
-      Data[i] = rhs.Data[i];
-  }
-  return *this;
-}
-String& String::operator+=(const String& rhs) {
-  size_t lengthth = length;
-  char *datata = new char[lengthth + rhs.length];
-  std::copy(Data, Data + std::min(length, lengthth + rhs.length), datata);
-  delete[] Data;
-  Data = datata;
-  length = lengthth + rhs.length;
-  std::copy(rhs.Data, rhs.Data + rhs.length, Data + lengthth);
-
-  return *this;
-}
-
-String& String::operator*=(unsigned int m) {
-  String datata(*this);
-  for (size_t i = 1; i < m; i++)
-    *this += datata;
-  return *this;
-}
-
-bool String::operator==(const String& rhs) const {
-  if (rhs.length != length){
-    return false;
-  } else {
-    for (size_t i = 0; i < length; i++){
-      if (Data[i] != rhs.Data[i]){
-        return false;
-      }
+  while (t < last) {
+    size_t temp = 0;
+    while( temp <= last && str[ t + temp ] == substr[temp] ){
+      temp++;
     }
-    return true;
-  }
-}
-bool String::operator<(const String& rhs) const {
-  if (length < rhs.length){
-    return true;
-  }
-  if (length > rhs.length) {
-    return false;
-  }
-  for (size_t i = 0; i < length; i++){
-    if (Data[i] < rhs.Data[i]){
-      return true;
-    }
-    return false;
-  }
-
-  return false; }
-size_t String::Find(const String& substr) const {
-  unsigned int i = 0;
-  unsigned int j = 0;
-  while (i < length) {
-    while (Data[i] != substr.Data[0] && i < length) {
-      ++i;
-    }
-    unsigned int t = i;
-    while (j < substr.length && i < length
-           && Data[i] == substr.Data[j]) {
-      ++i;
-      ++j;
-    }
-    if (j == substr.length)
+    if (temp == last){
       return t;
-    ++i;
-    j = 0;
+    }
+        t ++;
   }
-  return -1;}
-
-void String::Replace(char oldSymbol, char newSymbol) {
-  for (size_t i = 0; i < length; i++) {
-    if (Data[i] == oldSymbol)
-      Data[i] = newSymbol;
-  }
+  return -1;
 }
-size_t String::Size() const {return length; }
-bool String::Empty() const { return (Size() == 0); }
-char String::operator[](size_t index) const { return Data[index]; }
-char& String::operator[](size_t index) { return Data[index]; }
-void String::RTrim(char symbol) {
-  size_t trim = 0;
-  for (size_t i = length - 1; ; i--) {
-    if (Data[i] == symbol){
-      trim++;
+int hash(std::basic_string<char> s, int table_size, const int key)
+{
+  int hash_result = 0;
+  for (size_t i = 0; i != s.size(); ++i)
+    hash_result = (key * hash_result + s[i]) % table_size;
+  hash_result = (hash_result * 2 + 1) % table_size;
+  return hash_result;
+}
+
+size_t rk_find(const std::string& str, const std::string& substr) {
+  size_t str_s = str.size();
+  size_t substr_s = substr.size();
+  int p = 997;
+  int r = 899439232;
+  if (str_s < substr_s) {
+    return -1;
+  }
+
+  int hashS = hash(str, str_s, 45);
+  int hashSS = hash(substr, substr_s, 45);
+
+  for(size_t i = 0; i < str_s - substr_s; i++){
+    if (hashS == hashSS){
+      return i;
+    }
+    hashS = (p * hashS - (int) pow(p,substr_s) * hashS ) % r;
+  }
+  return -1;
+}
+
+// https://brestprog.by/topics/prefixfunction/
+std::vector<int> lps_func(const std::string& str){
+  size_t i;
+  std::vector<int>pi(str.length(),0);
+  for (i = 1; i < str.length(); i++) {
+    int j = pi[i - 1];
+    while (j > 0 && str[i] != str[j]) {
+      j = pi[j - 1];
+    }
+    if (str[i] == str[j]) {
+      pi[i] = j + 1;
     } else {
-      break;
+      pi[i] = j;
     }
   }
-  if (trim > 0) {
-    char* datata = new char[length - trim];
-    std::copy(Data, Data + (length - trim), datata);
-    delete[] Data;
-
-    Data = datata;
-    length = length - trim;
-  }
+  return pi;
 }
 
-void String::LTrim(char symbol) {
-  size_t trim = 0;
-  for (size_t i = 0; i < length; i++) {
-    if (Data[i] == symbol){
-      trim++;
-    } else {
-      break;
+size_t kmp_find(const std::string& str, const std::string& substr){
+  size_t i;
+  std::vector<int> pi = lps_func(substr +'#'+str);
+  int t_len = substr.length();
+  for (i = 0; i < str.size(); i++) {
+    if (pi[t_len + 1 + i] == t_len) {
+      return i - t_len + 1;
     }
   }
-  if (trim > 0) {
-    char* datata = new char[length - trim];
-    std::copy(Data + trim, Data + length, datata);
-    delete[] Data;
-    Data = datata;
-    length = length - trim;
-  }
-}
-
-void String::swap(String& oth) {
-  String datata(*this);
-  *this = oth;
-  oth = datata;
-}
-std::ostream& operator<<(std::ostream& out, const String& str) {
-  for (size_t i =0; i < str.length; i++){
-    out << str[i];
-  }
-  return out;
-}
-
-String operator+(const String &a, const String &b) {
-  String str(a);
-  str += b;
-  return str;
-}
-
-String operator*(const String &a, unsigned int b) {
-  String str(a);
-  str *= b;
-  return str;
-}
-bool operator!=(const String &a, const String &b) {
-  if (a.Size() != b.Size()) {
-    return true;
-  }
-  if (a.Size() == b.Size()) {
-    for (unsigned int i = 0; i < a.Size(); ++i) {
-      if (a[i] == b[i])
-        return false;
-    }
-  }
-  return true;
-}
-bool operator>(const String &a, const String &b) {
-  for (unsigned int i = 0; i < a.Size() && i < b.Size(); ++i) {
-    if (a[i] <= b[i])
-      return false;
-    if (a[i] > b[i])
-      return true;
-  }
-  return a.Size() >= b.Size();
+  return -1;
 }
