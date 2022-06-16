@@ -26,8 +26,17 @@ String::String(const String &rhs) {
 }
 
 
-String::String(const char *data) : String(strlen(data)) {
-  std::copy(datata, data + length, Data);
+String::String(const char *data) {
+  length= 0;
+  const char *str = data;
+  unsigned int i = 0;
+  while (str[i] != '\000') {
+    ++length;
+    ++i;
+  }
+  this->Data = new char[length];
+  for (i = 0; i < length; i++)
+    Data[i] = str[i];
 }
 
 
