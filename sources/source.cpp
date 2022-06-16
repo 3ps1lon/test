@@ -11,13 +11,13 @@ size_t str_find(const std::string& str, const std::string& substr){
   }
   while (t < last) {
     size_t temp = 0;
-    while( temp <= last && str[ t + temp ] == substr[temp] ){
+    while(temp <= last && str[ t + temp ] == substr[temp] ){
       temp++;
     }
     if (temp == last){
       return t;
     }
-        t ++;
+        t++;
   }
   return -1;
 }
@@ -42,11 +42,11 @@ size_t rk_find(const std::string& str, const std::string& substr) {
   int hashS = hash(str, str_s, 45);
   int hashSS = hash(substr, substr_s, 45);
 
-  for(size_t i = 0; i < str_s - substr_s; i++){
+  for (size_t i = 0; i < str_s - substr_s; i++){
     if (hashS == hashSS){
       return i;
     }
-    hashS = (p * hashS - (int) pow(p,substr_s) * hashS ) % r;
+    hashS = (p * hashS - static_cast<int> (pow(p, substr_s)) * hashS) % r;
   }
   return -1;
 }
@@ -54,7 +54,7 @@ size_t rk_find(const std::string& str, const std::string& substr) {
 // https://brestprog.by/topics/prefixfunction/
 std::vector<int> lps_func(const std::string& str){
   size_t i;
-  std::vector<int>pi(str.length(),0);
+  std::vector<int>pi(str.length(), 0);
   for (i = 1; i < str.length(); i++) {
     int j = pi[i - 1];
     while (j > 0 && str[i] != str[j]) {
