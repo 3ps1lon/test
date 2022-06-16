@@ -25,13 +25,11 @@ String::String(const String &rhs) {
   strcpy(Data, rhs.Data); */
 }
 
-String::String(const char* data)
-{
-  length = strlen(data);
-  Data = new char[length + 1];
-  strcpy(Data, data);
 
+String::String(const char *data) : String(strlen(data)) {
+  std::copy(datata, data + length, Data);
 }
+
 
 String& String::operator=(const String& rhs) {
   if (&rhs != this) {
