@@ -11,7 +11,7 @@ size_t str_find(const std::string& str, const std::string& substr){
   }
   while (t < last) {
     size_t temp = 0;
-    while(temp <= last && str[ t + temp ] == substr[temp] ){
+    while (temp <= last && str[ t + temp ] == substr[temp]){
       temp++;
     }
     if (temp == last){
