@@ -28,15 +28,12 @@ String::String(const String &rhs) {
 String::String(const char* data)
 {
   length = 0;
-  const char *datata = data;
-  unsigned int i = 0;
-  while (datata[i] != '\000'){
-    ++length;
-    ++i;
-  }
-  this->Data = new char[length];
-  for (i = 0; i < length; i++)
-    Data[i] = datata[i];
+  length = strlen(data);
+  char* datata = new char[length];
+  for (unsigned int i = 0; i < length; ++i)
+    datata[i] = data[i];
+  this->Data = datata;
+  length = strlen(data);
 }
 
 String& String::operator=(const String& rhs) {
@@ -183,4 +180,25 @@ String operator*(const String &a, unsigned int b) {
   String str(a);
   str *= b;
   return str;
+}
+bool operator!=(const String &a, const String &b) {
+  if (a.Size() != b.Size()) {
+    return true;
+  }
+  if (a.Size() == b.Size()) {
+    for (unsigned int i = 0; i < a.Size(); ++i) {
+      if (a[i] == b[i])
+        return false;
+    }
+  }
+  return true;
+}
+bool operator>(const String &a, const String &b) {
+  for (unsigned int i = 0; i < a.Size() && i < b.Size(); ++i) {
+    if (a[i] <= b[i])
+      return false;
+    if (a[i] > b[i])
+      return true;
+  }
+  return a.Size() >= b.Size();
 }
