@@ -33,7 +33,6 @@ String::String(const char* data)
     datata[i] = data[i];
   Data = datata;
   length = strlen(data);
-
 }
 
 String& String::operator=(const String& rhs) {
