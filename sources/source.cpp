@@ -28,7 +28,7 @@ String::String(const String &rhs) {
 String::String(const char* data)
 {
   length = strlen(data);
-  char* datata = new char[length + 1];
+  char* datata = new char[length];
   for (size_t i = 0; i < length; i++)
     datata[i] = data[i];
   Data = datata;
